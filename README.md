@@ -14,7 +14,8 @@ See `Dockerfile` and `build.gradle` to see full code
 ### neo4j 3.5.1 error when uberjar built wrong
 
 If you build uberjar/fatjar in a wrong way then you'll get following error with neo4j 3.5.1 `Configured default provider: native-btree-1.0 not found`:
-<detail>
+
+```
 Exception in thread "main" java.lang.RuntimeException: Error starting org.neo4j.graphdb.facade.GraphDatabaseFacadeFactory, /tmp
 	at org.neo4j.graphdb.facade.GraphDatabaseFacadeFactory.initFacade(GraphDatabaseFacadeFactory.java:212)
 	at org.neo4j.graphdb.facade.GraphDatabaseFacadeFactory.newFacade(GraphDatabaseFacadeFactory.java:135)
@@ -43,12 +44,13 @@ Caused by: java.lang.NullPointerException: Configured default provider: `native-
 	at org.neo4j.kernel.impl.transaction.state.DefaultIndexProviderMap.init(DefaultIndexProviderMap.java:67)
 	at org.neo4j.kernel.lifecycle.LifeSupport$LifecycleInstance.init(LifeSupport.java:413)
 	... 17 more
-</detail>
+```
 
 ### neo4j 3.4.11 error when uberjar built wrong
 
 And with neo4j 3.4.11 you'll get `Unknown setting: dbms.tx_log.rotation.size`
-<detail>
+
+```
 Exception in thread "main" java.lang.RuntimeException: Error starting org.neo4j.kernel.impl.factory.GraphDatabaseFacadeFactory, /tmp/c
 	at org.neo4j.kernel.impl.factory.GraphDatabaseFacadeFactory.initFacade(GraphDatabaseFacadeFactory.java:212)
 	at org.neo4j.kernel.impl.factory.GraphDatabaseFacadeFactory.newFacade(GraphDatabaseFacadeFactory.java:125)
@@ -77,7 +79,7 @@ Caused by: java.lang.IllegalArgumentException: Unknown setting: dbms.tx_log.rota
 	at org.neo4j.kernel.lifecycle.LifeSupport$LifecycleInstance.start(LifeSupport.java:445)
 	... 13 more
 The command '/bin/sh -c java -jar build/libs/gradle.jar' returned a non-zero code: 1
-</detail>
+```
 
 ### Or very generic
 
